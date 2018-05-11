@@ -66,6 +66,20 @@ public class HangmanImpl extends HangmanPOA {
 		return players.get(players.indexOf(new Player(name)));
 	}
 
+	
+	private void getWords() throws Exception {
+		File file = new File("words.txt");
+		Scanner read = new Scanner(file);
+		words = new ArrayList<>();
+		do {
+			words.add(read.nextLine());
+		} while(read.hasNext());
+	}
 
+	private boolean containsByName(String name) {
+		return players.contains(new Player(name));
+	}
+
+	
 
 }
