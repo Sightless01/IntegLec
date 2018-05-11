@@ -32,7 +32,22 @@ public class Server {
 
             System.out.println("Server running...");
 
-		//insert code//
+			BufferedReader data_reader = new BufferedReader(new InputStreamReader(System.in));
+            String msg_kbd= " ";
+            while (!msg_kbd.equals("quit") && !msg_kbd.equals("QUIT")) {
+                System.out.println("Enter \"quit\" to shutdown the server...");
+                msg_kbd = data_reader.readLine();
+                if(msg_kbd.equals("quit") || msg_kbd.equals("QUIT")) {
+                    System.out.println("Shutdown of server is in progress...");
+                    ncRef.unbind(path);
+                    orb.shutdown(false);
+                    System.out.println("Shutdown was successful...");
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("Exception in server...\nException:\n" + e);
+        }
     }
 }
 
