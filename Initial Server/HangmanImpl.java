@@ -80,6 +80,16 @@ public class HangmanImpl extends HangmanPOA {
 		return players.contains(new Player(name));
 	}
 
-	
+	private String selectWord(String name) {
+		Random random = new Random();
+		String word = "";
+		do {
+			int num = random.nextInt(words.size());
+			word = words.get(num);
+		} while(getPlayerByName(name).words.contains(word));
+		getPlayerByName(name).words.add(word);
+		getPlayerByName(name).SetPlayingWord(word);
+		return word;
+	}
 
 }
