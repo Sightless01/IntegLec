@@ -21,7 +21,25 @@ public class Player implements Serializable {
     return playingWord;
   }
 
- // insert code //
+ public void reset() {
+    life = 5;
+  }
 
+  public void reduceLife() {
+    life--;
+  }
+
+  public int getLife() {
+    return life;
+  }
+
+  public boolean equals(Object o) {
+    boolean bool = false;
+    if(o instanceof Player) {
+      Player player = (Player) o;
+      bool = player.name.equals(this.name);
+    }
+    return bool;
+  }
 
 }
