@@ -1,4 +1,4 @@
-import hangman.*;
+import HangmanGame.*;
 import java.util.*;
 import java.io.*;
 

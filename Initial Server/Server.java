@@ -1,4 +1,4 @@
-import hangman.*;
+import HangmanGame.*;
 import org.omg.CosNaming.*;
 import org.omg.CosNaming.NamingContextPackage.*;
 import org.omg.CORBA.*;
