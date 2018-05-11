@@ -40,8 +40,32 @@ public class HangmanImpl extends HangmanPOA {
 		return false;
 	}
 
-	// seth //
-	
-	
+	@Override
+	public boolean wordGuess(String name, String guess) {
+		String word = getPlayerByName(name).getPlayingWord();
+		return word.equalsIgnoreCase(guess);
+	}
+
+	@Override
+	public String newGame(String name) {
+		String word = selectWord(name);
+		if(getPlayerByName(name).getLife() == 0) {
+			getPlayerByName(name).reset();
+			return word;
+		}
+		return word;
+	}
+
+	@Override
+	public String endGame(String name) {
+		players.remove(getPlayerByName(name));
+		return "Thank You for Playing the game!";
+	}
+
+	private Player getPlayerByName(String name) {
+		return players.get(players.indexOf(new Player(name)));
+	}
+
+
 
 }
