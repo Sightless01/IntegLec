@@ -1,0 +1,10 @@
+*.class
+/Client_Java/HangmanGame
+/Client_Java/orb.db
+orb.db
+/Server_Java/HangmanGame
+/Server_Java/orb.db
+Client_Python/__pycache__
+Client_Python/HangmanGame
+Client_Python/HangmanGame_POA
+Client_Python/HangmanGame.py
